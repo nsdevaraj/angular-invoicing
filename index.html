@@ -32,13 +32,13 @@
         <div class="input-container"><input type="text" ng-model="invoice.company_info.address1"/></div>
         <div class="input-container"><input type="text" ng-model="invoice.company_info.address2"/></div>
         <div class="input-container"><input type="text" ng-model="invoice.company_info.address3"/></div>
-        <div class="input-container">Tel:<input type="text" ng-model="invoice.company_info.phone"/></div>
-        <div class="input-container">GSTIN:<input type="text" ng-model="invoice.company_info.gstid"/></div>
+        <div class="input-container"><input type="text" ng-model="invoice.company_info.phone"/></div>
+        <div class="input-container"><input type="text" ng-model="invoice.company_info.gstid"/></div>
         </div>
       </div>
       <div class="col-xs-2">
         <div class="invoice-number-container">
-          <label for="invoice-number">Original for Receipient</label>
+          <label>Original for Receipient</label>
         </div>
       </div>
       
@@ -49,11 +49,7 @@
     </div>
     <div class="row infos">
       <div class="col-xs-6">
-        <div class="input-container"><input type="text" ng-model="invoice.customer_info.name"/></div>
-        <div class="input-container"><input type="text" ng-model="invoice.customer_info.web_link"/></div>
-        <div class="input-container" data-ng-hide='printMode'>
-          <select ng-model='currencySymbol' ng-options='currency.symbol as currency.name for currency in availableCurrencies'></select>
-        </div>
+	  <label for="invoice-number">Invoice No.</label><input type="text" id="invoice-number" ng-model="invoice.invoice_number" />
       </div>
       <div class="col-xs-6 right company_info_address_container">
         <div class="input-container"><input type="text" ng-model="invoice.company_info.name"/></div>

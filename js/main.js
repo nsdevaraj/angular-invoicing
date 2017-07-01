@@ -13,8 +13,8 @@ angular.module('invoicing', [])
     address1: '1 Infinite Loop',
     address2: 'Cupertino, California, US',
     address3: 'M5S 1B6',
-	phone:'5649494',
-	gstid:'345435'
+	phone: 'Tel:5649494',
+	gstid: 'GSTIN:345435'
   },
   company_info: {
     name: 'Metaware Labs',
@@ -22,8 +22,8 @@ angular.module('invoicing', [])
     address1: '123 Yonge Street',
     address2: 'Toronto, ON, Canada',
     address3: 'M5S 1B6',
-	phone:'5649494',
-	gstid:'345435'
+	phone:'Tel:5649494',
+	gstid:'GSTIN:345435'
   },
   items:[
     { qty: 10, description: 'Gadget', cost: 9.95 }
@@ -214,7 +214,7 @@ angular.module('invoicing', [])
   // Runs on document.ready
   angular.element(document).ready(function () {
     // Set focus
-    //document.getElementById('invoice-number').focus();
+    document.getElementById('invoice-number').focus();
 
     // Changes the logo whenever the input changes
     document.getElementById('imgInp').onchange = function() {

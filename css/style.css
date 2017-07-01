@@ -38,7 +38,9 @@
 .invoice-number-container * {
   font-weight:bold;
 }
-
+.invoice-detail{
+	
+}
  .banner {
    background-color:#357EBD;
   text-align:center;
