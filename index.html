@@ -10,7 +10,7 @@
   <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body ng-app="invoicing" ng-controller="InvoiceCtrl" >
-  <div class="container" width="800px" id="invoice" >
+  <div class="container" width="100%" id="invoice" >
     <div class="row">
       <div class="col-xs-12 heading" ><b>{{invoice.company_info.name}} </b>
       </div>
@@ -134,25 +134,20 @@
 	  <div class="input-container">Code<input type="text" class="invoice-detail smallcode" ng-model="invoice.ship_state_code" /></div>
       </div>
     </div>
-	
-    <div class="row infos">
-      
-      <div class="col-xs-6 right company_info_address_container">
-        <div class="input-container"><input type="text" ng-model="invoice.company_info.name"/></div>
-        <div class="input-container"><input type="text" ng-model="invoice.company_info.web_link"/></div>
-        <div class="input-container"><input type="text" ng-model="invoice.company_info.address1"/></div>
-        <div class="input-container"><input type="text" ng-model="invoice.company_info.address2"/></div>
-        <div class="input-container"><input type="text" ng-model="invoice.company_info.address3"/></div>
-        <div class="input-container">Tel:<input type="text" ng-model="invoice.company_info.phone"/></div>
-        <div class="input-container">GSTIN:<input type="text" ng-model="invoice.company_info.gstid"/></div>
-      </div>
-    </div>
+	<br/> 
     <div class="items-table">
       <div class="row header">
         <div class="col-xs-1">&nbsp;</div>
-        <div class="col-xs-5">Description</div>
-        <div class="col-xs-2">Quantity</div>
-        <div class="col-xs-2">Cost {{currencySymbol}}</div>
+        <div class="col-xs-1">S. No.</div>
+        <div class="col-xs-2">Product Description</div>
+        <div class="col-xs-2">HSN code</div>
+        <div class="col-xs-2">UOM</div>
+        <div class="col-xs-2">Qty</div>
+        <div class="col-xs-2">Rate {{currencySymbol}}</div>
+        <div class="col-xs-2">Amount {{currencySymbol}}</div>
+        <div class="col-xs-2">Discount {{currencySymbol}}</div>
+        <div class="col-xs-2">Taxable Value{{currencySymbol}}</div>
+        <div class="col-xs-2"> {{currencySymbol}}</div>
         <div class="col-xs-2 text-right">Total</div>
       </div>
       <div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">

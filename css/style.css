@@ -128,7 +128,7 @@ body{
 }
 
 div.container{
-  width: 800px;
+  width: 100%;
 }
 
 #imgInp{
