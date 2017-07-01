@@ -135,9 +135,15 @@
       </div>
     </div>
 	<br/> 
-    <div class="items-table">
-      <div class="row header">
+    <div class="items-table"> 
+	<div class="row header">
         <div class="col-xs-1">&nbsp;</div>
+        <div class="col-xs-5">Description</div>
+        <div class="col-xs-2">Quantity</div>
+        <div class="col-xs-2">Cost {{currencySymbol}}</div>
+        <div class="col-xs-2 text-right">Total</div>
+      </div>
+     <!--   <div class="col-xs-1">&nbsp;</div>
         <div class="col-xs-1">S. No.</div>
         <div class="col-xs-2">Product Description</div>
         <div class="col-xs-2">HSN code</div>
@@ -145,11 +151,8 @@
         <div class="col-xs-2">Qty</div>
         <div class="col-xs-2">Rate {{currencySymbol}}</div>
         <div class="col-xs-2">Amount {{currencySymbol}}</div>
-        <div class="col-xs-2">Discount {{currencySymbol}}</div>
-        <div class="col-xs-2">Taxable Value{{currencySymbol}}</div>
-        <div class="col-xs-2"> {{currencySymbol}}</div>
-        <div class="col-xs-2 text-right">Total</div>
-      </div>
+        <div class="col-xs-2">Discount {{currencySymbol}}</div>   -->
+		 
       <div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">
         <div class="col-xs-1 remove-item-container">
           <a href ng-hide="printMode" ng-click="removeItem(item)" class="btn btn-danger">[X]</a>
