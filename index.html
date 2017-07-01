@@ -93,6 +93,48 @@
       <div class="col-xs-6 banner" >Ship to Party</div>
     </div>
 	
+	<div class="row">
+     <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">Name:<input type="text" class="invoice-detail" ng-model="invoice.bill_name" /></div>
+      </div>
+	  <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">Name:<input type="text" class="invoice-detail" ng-model="invoice.ship_name" /></div>
+      </div> 
+    </div>
+	
+	<div class="row">
+     <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">Address:&nbsp;&nbsp;<textarea type="text" class="invoice-detail" ng-model="invoice.bill_address" ></textarea></div>
+      </div>
+	  <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">Address:&nbsp;&nbsp;<textarea type="text" class="invoice-detail" ng-model="invoice.ship_address" ></textarea></div>
+      </div> 
+    </div>
+	
+	<div class="row">
+     <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">GSTIN:<input type="text" class="invoice-detail" ng-model="invoice.bill_gstin" /></div>
+      </div>
+	  <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">GSTIN:<input type="text" class="invoice-detail" ng-model="invoice.ship_gstin" /></div>
+      </div> 
+    </div>
+	
+	<div class="row">
+     <div class="col-xs-4 invoice-detail">
+	  <div class="input-container">State<input type="text" class="invoice-detail" ng-model="invoice.bill_state" /></div>
+      </div>
+     <div class="col-xs-2 invoice-detail">
+	  <div class="input-container">Code<input type="text" class="invoice-detail smallcode" ng-model="invoice.bill_state_code" /></div>
+      </div>
+     <div class="col-xs-4 invoice-detail">
+	  <div class="input-container">State<input type="text" class="invoice-detail" ng-model="invoice.ship_state" /></div>
+      </div>
+     <div class="col-xs-2 invoice-detail">
+	  <div class="input-container">Code<input type="text" class="invoice-detail smallcode" ng-model="invoice.ship_state_code" /></div>
+      </div>
+    </div>
+	
     <div class="row infos">
       
       <div class="col-xs-6 right company_info_address_container">
