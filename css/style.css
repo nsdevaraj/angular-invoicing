@@ -32,7 +32,9 @@
     height:0px;
 }
 
-
+.company_info_address_container{
+  text-align:center;
+}
 .invoice-number-container * {
   font-weight:bold;
 }
@@ -50,9 +52,7 @@ input:focus {
   outline: 0;
 }
 
-.heading {
-  background-color:#357EBD;
-  color:#FFF;
+.heading {	
   margin-bottom:1em;
   text-align:center;
   line-height:2.5em;

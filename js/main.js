@@ -5,7 +5,7 @@ angular.module('invoicing', [])
 
 // The invoice displayed when the user first uses the app
 .constant('DEFAULT_INVOICE', {
-  tax: 13.00,
+  tax: 18.00,
   invoice_number: 10,
   customer_info: {
     name: 'Mr. John Doe',
@@ -19,7 +19,9 @@ angular.module('invoicing', [])
     web_link: 'www.metawarelabs.com',
     address1: '123 Yonge Street',
     address2: 'Toronto, ON, Canada',
-    postal: 'M5S 1B6'
+    address3: 'M5S 1B6',
+	phone:'5649494',
+	gstid:'345435'
   },
   items:[
     { qty: 10, description: 'Gadget', cost: 9.95 }
