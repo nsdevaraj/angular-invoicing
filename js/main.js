@@ -7,6 +7,7 @@ angular.module('invoicing', [])
 .constant('DEFAULT_INVOICE', {
   tax: 18.00,
   invoice_number: 10,
+  transport_mode:'vehicle',
   customer_info: {
     name: 'Mr. John Doe',
     web_link: 'John Doe Designs Inc.',

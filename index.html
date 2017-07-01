@@ -47,10 +47,18 @@
       <div class="col-xs-12 banner" ><b> Tax Invoice </b>
       </div>
     </div>
-    <div class="row infos">
-      <div class="col-xs-6">
-	  <label for="invoice-number">Invoice No.</label><input type="text" id="invoice-number" ng-model="invoice.invoice_number" />
+	
+	<div class="row">
+     <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">Invoice No:<input type="text" id="invoice-number" class="invoice-detail" ng-model="invoice.invoice_number" /></div>
       </div>
+	  <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">Transport Mode:<input type="text" class="invoice-detail" ng-model="invoice.transport_mode" /></div>
+      </div>
+	  
+    </div>
+    <div class="row infos">
+      
       <div class="col-xs-6 right company_info_address_container">
         <div class="input-container"><input type="text" ng-model="invoice.company_info.name"/></div>
         <div class="input-container"><input type="text" ng-model="invoice.company_info.web_link"/></div>
