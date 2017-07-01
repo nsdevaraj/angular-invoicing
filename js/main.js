@@ -10,6 +10,11 @@ angular.module('invoicing', [])
   transport_mode:'vehicle',
   vehicle_number:'TN04-2423',
   invoice_date:'',
+  supply_date:'',
+  reverse_charge:'Y',
+  supply_place:'',
+  state:'',
+  state_code:'',
   customer_info: {
     name: 'Mr. John Doe',
     web_link: 'John Doe Designs Inc.',

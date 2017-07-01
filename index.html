@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="row branding">
-	<div class="col-xs-2 logo-container">
+	<div class="col-xs-3 logo-container">
         <input type="file" id="imgInp" />
         <img ng-hide="logoRemoved" id="company_logo" ng-src="{{ logo }}" alt="your image" width="100%" />
         <div>
@@ -36,13 +36,13 @@
         <div class="input-container"><input type="text" ng-model="invoice.company_info.gstid"/></div>
         </div>
       </div>
-      <div class="col-xs-2">
+      <div class="col-xs-3">
         <div class="invoice-number-container">
           <label>Original for Receipient</label>
         </div>
       </div>
       
-    </div>
+    </div> 
 	<div class="row">
       <div class="col-xs-12 banner" ><b> Tax Invoice </b>
       </div>
@@ -59,7 +59,7 @@
 	
 	<div class="row">
      <div class="col-xs-6 invoice-detail">
-	  <div class="input-container">Invoice Date:<input type="text" class="invoice-detail" ng-model="invoice.invoice_date" /></div>
+	  <div class="input-container">Invoice Date: &nbsp;&nbsp;&nbsp;&nbsp;<input type="date" class="invoice-detail" ng-model="invoice.invoice_date" /></div>
       </div>
 	  <div class="col-xs-6 invoice-detail">
 	  <div class="input-container">Vehicle Number:<input type="text" class="invoice-detail" ng-model="invoice.vehicle_number" /></div>
@@ -68,12 +68,31 @@
 	
 	<div class="row">
      <div class="col-xs-6 invoice-detail">
-	  <div class="input-container">Invoice No:<input type="text" id="invoice-number" class="invoice-detail" ng-model="invoice.invoice_number" /></div>
+	  <div class="input-container">Reverse Charge:<input type="text" class="invoice-detail" ng-model="invoice.reverse_charge" /></div>
       </div>
 	  <div class="col-xs-6 invoice-detail">
-	  <div class="input-container">Transport Mode:<input type="text" class="invoice-detail" ng-model="invoice.transport_mode" /></div>
+	  <div class="input-container">Date of Supply: &nbsp;&nbsp;&nbsp;&nbsp;<input type="date" class="invoice-detail" ng-model="invoice.supply_date" /></div>
       </div> 
     </div>
+	
+	<div class="row">
+     <div class="col-xs-4 invoice-detail">
+	  <div class="input-container">State<input type="text" class="invoice-detail" ng-model="invoice.state" /></div>
+      </div>
+     <div class="col-xs-2 invoice-detail">
+	  <div class="input-container">Code<input type="text" class="invoice-detail smallcode" ng-model="invoice.state_code" /></div>
+      </div>
+	  <div class="col-xs-6 invoice-detail">
+	  <div class="input-container">Place of Supply:<input type="text" class="invoice-detail" ng-model="invoice.supply_place" /></div>
+      </div> 
+    </div>
+	<br/>
+	
+	<div class="row">
+      <div class="col-xs-6 banner" >Bill to Party</div>
+      <div class="col-xs-6 banner" >Ship to Party</div>
+    </div>
+	
     <div class="row infos">
       
       <div class="col-xs-6 right company_info_address_container">
