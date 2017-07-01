@@ -8,6 +8,8 @@ angular.module('invoicing', [])
   tax: 18.00,
   invoice_number: 10,
   transport_mode:'vehicle',
+  vehicle_number:'TN04-2423',
+  invoice_date:'',
   customer_info: {
     name: 'Mr. John Doe',
     web_link: 'John Doe Designs Inc.',
