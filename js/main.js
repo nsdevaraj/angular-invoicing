@@ -12,7 +12,9 @@ angular.module('invoicing', [])
     web_link: 'John Doe Designs Inc.',
     address1: '1 Infinite Loop',
     address2: 'Cupertino, California, US',
-    postal: '90210'
+    address3: 'M5S 1B6',
+	phone:'5649494',
+	gstid:'345435'
   },
   company_info: {
     name: 'Metaware Labs',
@@ -96,28 +98,8 @@ angular.module('invoicing', [])
   service.all = function() {
     return [
       {
-        name: 'British Pound (£)',
-        symbol: '£'
-      },
-      {
-        name: 'Canadian Dollar ($)',
-        symbol: 'CAD $ '
-      },
-      {
-        name: 'Euro (€)',
-        symbol: '€'
-      },
-      {
-        name: 'Indian Rupee (₹)',
-        symbol: '₹'
-      },
-      {
-        name: 'Norwegian krone (kr)',
-        symbol: 'kr '
-      },
-      {
-        name: 'US Dollar ($)',
-        symbol: '$'
+        name: 'Indian Rupee (र)',
+        symbol: 'र'
       }
     ]
   }
@@ -131,7 +113,7 @@ angular.module('invoicing', [])
   function($scope, $http, DEFAULT_INVOICE, DEFAULT_LOGO, LocalStorage, Currency) {
 
   // Set defaults
-  $scope.currencySymbol = '$';
+  $scope.currencySymbol = 'र';
   $scope.logoRemoved = false;
   $scope.printMode   = false;
 
@@ -232,7 +214,7 @@ angular.module('invoicing', [])
   // Runs on document.ready
   angular.element(document).ready(function () {
     // Set focus
-    document.getElementById('invoice-number').focus();
+    //document.getElementById('invoice-number').focus();
 
     // Changes the logo whenever the input changes
     document.getElementById('imgInp').onchange = function() {
