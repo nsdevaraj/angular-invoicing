@@ -132,11 +132,7 @@ angular.module('invoicing',  ['cmGoogleApi'])
   function($scope, $http, DEFAULT_INVOICE, DEFAULT_LOGO, LocalStorage, Currency, cmAuthService, cmApiService, googleClient) {
  
   	$scope.isSignedIn = false;
-	$scope.user = "";
-	$scope.viewedFile = [];
-	$scope.modifiedFile = [];
-	$scope.pickedFile = {};
-	$scope.filePicked = false;
+	$scope.user = "";  
 
 	var signInCallback = function(authResult) {
 		// Here you can send code to the server,
@@ -180,69 +176,7 @@ angular.module('invoicing',  ['cmGoogleApi'])
 			auth2.disconnect();
 		});
 	};
-
-	// Make an api call using cmApiService, my own GAPI wrapper
-	$scope.getViewedFile = function(){
-		var driveOptions = {
-			'maxResults': 10,
-			'orderBy': 'lastViewedByMeDate desc',
-			'q': 'mimeType != "application/vnd.google-apps.folder"'
-		};
-		// cmApiService ensure that GAPI is loaded before call the API
-		cmApiService.execute('drive.files.list', driveOptions).then(
-			function(resp){
-				$scope.viewedFile = resp.result.items;
-			}
-		);
-	};
-
-	// Make an api call using GAPI direclty
-	$scope.getModifiedFile = function(){
-		var driveOptions = {
-			'maxResults': 10,
-			'orderBy': 'modifiedByMeDate desc',
-			'q': 'mimeType != "application/vnd.google-apps.folder"'
-		};
-		googleClient.afterApiLoaded().then(function(){
-			// when the above promise is resolved, I'm sure that GAPI il correctly loaded
-			// so here I can use GAPI (essentially is what cmApiService does)
-			gapi.client.drive.files.list(driveOptions).execute(function(resp){
-				$scope.modifiedFile = resp.items;
-				$scope.$apply();
-			});
-		});
-	};
-
-	// Define some views for the picker.
-	// See https://developers.google.com/picker/docs/reference
-	$scope.views = function(){
-		var docsView = new google.picker.DocsView(google.picker.ViewId.DOCS);
-		docsView.setParent('ROOT');
-		docsView.setSelectFolderEnabled(true);
-		docsView.setIncludeFolders(true);
-		var videoSearch = new google.picker.VideoSearchView();
-		videoSearch.setSite(google.picker.VideoSearchView.YOUTUBE);
-		return [docsView, videoSearch];
-	};
-
-	// callback that is invoked when the user select data on picker
-	$scope.onPicked = function(data){
-		$scope.pickedFile = data[0];
-		$scope.filePicked = true;
-	};
-
-	$scope.test = function(){
-		 googleClient.afterApiLoaded().then(function () {
-			console.log(gapi.auth.getToken());
-			if(gapi.auth.getToken() !== null){
-				// if token exists, send access token in request
-				//request.setRequestHeader('Authorization','Bearer ' + gapi.auth.getToken().access_token);
-				console.log(gapi.auth.getToken().access_token)
-				console.log(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token);
-			}
-		});
-	};
-
+  
 	
   // Set defaults
   $scope.currencySymbol = 'र';
@@ -369,6 +303,9 @@ angular.module('invoicing',  ['cmGoogleApi'])
 		.setClientId('598025943249-e0lk9nun0qsg054q3pi59his8eugsnjt.apps.googleusercontent.com')
 /*		.addScope('https://www.googleapis.com/auth/drive.readonly')
 		.addScope(' https://www.googleapis.com/auth/youtube')*/
+		
+        .addScope("https://www.googleapis.com/auth/spreadsheets")
+		.addScope("https://www.googleapis.com/auth/drive.metadata.readonly")
 		.addApi('drive', 'v2')
 		.loadPickerLibrary();
 });
